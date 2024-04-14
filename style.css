@@ -1,0 +1,291 @@
+/* basic  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #2d2a24;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+/* all page setting */
+
+.container {
+  width: 80%;
+  float: left;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+/* serach button and random button */
+
+input,
+button {
+  border: 1px solid #dedede;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 14px;
+  padding: 8px 10px;
+  margin: 0;
+}
+
+input[type='text'] {
+  width: 300px;
+}
+
+.search-btn {
+  cursor: pointer;
+  border-left: 0;
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.random-btn {
+  cursor: pointer;
+  margin-left: 10px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* single meal and display menu section */
+
+.meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.meal {
+  cursor: pointer;
+  position: relative;
+  height: 180px;
+  width: 180px;
+  text-align: center;
+}
+
+.meal img {
+  width: 100%;
+  height: 100%;
+  box-shadow: #100f0f;
+}
+
+.meal-info {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  /* height: 100%;
+  width: 100%; */
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in;
+  /* opacity: 0; */
+}
+
+.meal-info h4{
+  font-weight: lighter;
+  
+}
+
+.add{
+  font-size: 10px;
+}
+
+/* Single Meal */
+
+.single-meal {
+  margin: 30px auto;
+  width: 70%;
+  
+}
+
+.single-meal h1{
+  margin-top: 30px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.single-meal img {
+  width: 300px;
+  margin: 15px;
+  border: 1px #fff solid;
+  border-radius: 2px;
+}
+
+.single-meal-info {
+  margin: 10px;
+  padding: 10px;
+  border: 2px #b4b3b2;
+  border-style: dashed solid;
+}
+
+.single-meal p {
+  margin: o;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.single-meal ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.single-meal ul li {
+  border: 1px solid #bdbbb8;
+  background-color: #d2cfc7;
+  display: inline-block;
+  color: #100f0f;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px;
+  margin: 0 5px 5px 0;
+}
+
+.main h2{
+  margin-top: 20px;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.single-add{
+  margin-top: 20px;
+  cursor: pointer;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.single-add span{
+  font-weight: bold;
+}
+
+/* Fav aside section */
+
+.fav-container{
+  cursor: pointer;
+  width: 20%;
+  float: right;
+  background-color: rgba(31, 29, 29, 0.492);
+  color: white;
+  padding: 10px;
+}
+
+.fav-container h2{
+  margin: 20px;
+  padding: 10px;
+  background-color: rgb(245, 55, 45);
+  color: rgb(246, 242, 242);
+  margin-left: -10px;
+  margin-right: -10px;
+  text-align: center;
+  font-style: italic;
+}
+
+.fav-lists{
+  margin-top: 20px;
+  margin: 20px; 
+  margin-left: 18%;
+}
+
+
+/* ----------------------------- */
+
+/* lower display classification */
+
+@media (max-width: 800px) {
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    width: 100%;
+    float: none;
+    padding: 10px; 
+  }
+
+  .fav-container{
+    width: 100%;
+    float: none;
+    padding: 10px;
+  }
+
+  .fav-lists{
+    margin-top: 20px;
+    margin: 20px; 
+    margin-left: 37%;
+  }
+}
+@media (max-width: 700px) {
+  .meals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal {
+    height: 200px;
+    width: 200px;
+  }
+
+  .container {
+    width: 100%;
+    float: none;
+    padding: 10px; 
+  }
+
+  .fav-container{
+    width: 100%;
+    float: none;
+    padding: 10px;
+  }
+
+  .fav-lists{
+    margin-top: 20px;
+    margin: 20px; 
+    margin-left: 30%;
+  }
+}
+@media (max-width: 500px) {
+  input[type='text'] {
+    width: 100%;
+  }
+
+  .meals {
+    grid-template-columns: 1fr;
+  }
+
+  .meal {
+    height: 300px;
+    width: 300px;
+  }
+
+  .container {
+    width: 100%;
+    float: none;
+    padding: 10px; 
+  }
+
+  .fav-container{
+    width: 100%;
+    float: none;
+    padding: 10px;
+  }
+
+  .fav-lists{
+    margin-top: 20px;
+    margin: 20px; 
+    margin-left: 18%;
+  }
+}
