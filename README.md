@@ -20,7 +20,13 @@ You can search meal recipes by tags like fish or chicken, and it will show instr
 ```
  https://www.themealdb.com/api.php
 ```
+
+#### Website Host Link
+
 ```
+https://astutegaurav.github.io/Recipe-Search/
+```
+
 
 
 
