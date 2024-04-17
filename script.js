@@ -160,7 +160,7 @@ function addList(meal) {
 
 let displayData = () => {
   let mealData = JSON.parse(localStorage.getItem("mealDetails")) ?? [];
-  console.log(mealData);
+  // console.log(mealData);
   let html = "";
   mealData.forEach((element, i) => {
     html += `
@@ -169,7 +169,7 @@ let displayData = () => {
         
           <div class="meal" data-id="${element.mealID}">
               <img src ="${element.mealImg}" alt="food">
-            <div class="meal-info" id="back">
+            <div class="meal-info" id="back" data-mealID="${element.mealID}">
               <h4>${element.mealName}</h4>
               <button class="delete" onclick="deleteList(${i})">
                 Delete
@@ -183,6 +183,7 @@ let displayData = () => {
 
   favList.innerHTML = html;
 };
+
 
 // delete meal from fav cart
 
@@ -204,6 +205,16 @@ mealsEl.addEventListener("click", (e) => {
 
   if (mealInfo) {
     const mealID = mealInfo.getAttribute("data-mealid");
+    getMealById(mealID);
+  }
+});
+
+favList.addEventListener("click", (e) => {
+  const mealInfo = e.target.closest(".meal-info");
+
+  if (mealInfo) {
+    const mealID = mealInfo.getAttribute("data-mealid");
+    console.log(mealInfo);
     getMealById(mealID);
   }
 });
